@@ -2,6 +2,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import customTheme from '../styles/theme'
 import { Global, css } from '@emotion/react'
 import { prismDarkTheme } from '../styles/prism'
+import 'focus-visible/dist/focus-visible'
 const GlobalStyle = ({ children }) => {
   return (
     <>
@@ -9,7 +10,7 @@ const GlobalStyle = ({ children }) => {
         styles={css`
           ${prismDarkTheme};
           ::selection {
-            background-color: #90cdf4;
+            background-color: #ffb7b7;
             color: #fefefe;
           }
           ::-moz-selection {
@@ -23,7 +24,8 @@ const GlobalStyle = ({ children }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: #000;
+            background: #36453b;
+            color: #12141d;
           }
           ::-webkit-scrollbar {
             width: 8px;
@@ -33,6 +35,10 @@ const GlobalStyle = ({ children }) => {
           ::-webkit-scrollbar-thumb {
             background: #111111;
             border-radius: 8px;
+          }
+          .js-focus-visible :focus:not([data-focus-visible-added]) {
+            outline: none;
+            box-shadow: none;
           }
         `}
       />

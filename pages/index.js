@@ -1,11 +1,11 @@
 import React from 'react'
-import SEO from '../src/components/seo.js'
+import SEO from '../src/components/seo'
+import Layout from '../src/components/layout'
 
 export default function Home() {
   return (
-    <>
-      Portfolio
+    <Layout enableTransition="true">
       <SEO />
-    </>
+    </Layout>
   )
 }
