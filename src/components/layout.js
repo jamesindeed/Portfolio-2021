@@ -10,19 +10,19 @@ const Layout = ({ enableTransition, children }) => {
         {children}
       </Flex>
       <Stack alignItems="center" mt={10} mb={5}>
-        <Text textAlign="center" fontSize="sm">
-          Designed and Developed by James Indeed.
+        <Text textAlign="center" fontSize="lg">
+          Designed and Developed by James Troughton.
           <br />
-          Built with
-          <chakra.span fontWeight="semibold" color="button2">
+          Built with{' '}
+          <chakra.span fontWeight="semibold" color="button1">
             Next.js
-          </chakra.span>
-          &
-          <chakra.span fontWeight="semibold" color="button2">
+          </chakra.span>{' '}
+          &{' '}
+          <chakra.span fontWeight="semibold" color="button1">
             Chakra UI
           </chakra.span>
-          . Hosted on
-          <chakra.span fontWeight="semibold" color="button2">
+          . Hosted on{' '}
+          <chakra.span fontWeight="semibold" color="button1">
             Vercel
           </chakra.span>
           .

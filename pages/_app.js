@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import customTheme from '../styles/theme'
 import { Global, css } from '@emotion/react'
-import { prismDarkTheme } from '../styles/prism'
+import { prismDarkTheme, prismBaseTheme } from '../styles/prism'
 import 'focus-visible/dist/focus-visible'
 const GlobalStyle = ({ children }) => {
   return (
@@ -19,13 +19,15 @@ const GlobalStyle = ({ children }) => {
           }
           html {
             min-width: 356px;
+            background-image: 
           }
           #__next {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: #36453b;
-            color: #12141d;
+            background: #0e1212;
+            color: #fdfcfa,
+;
           }
           ::-webkit-scrollbar {
             width: 8px;
