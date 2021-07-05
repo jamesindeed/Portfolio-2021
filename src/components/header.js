@@ -23,13 +23,13 @@ import { HiMenuAlt3 } from 'react-icons/hi'
 import {
   FaFacebookF,
   FaInstagram,
-  FaGithubAlt,
+  FaGithub,
   FaDribbble,
 } from 'react-icons/fa'
 
 const social = [
   {
-    path: '/projects',
+    path: '/',
     icon: <FaFacebookF />,
   },
   {
@@ -38,7 +38,7 @@ const social = [
   },
   {
     path: '/',
-    icon: <FaGithubAlt />,
+    icon: <FaGithub />,
   },
 ]
 
@@ -47,23 +47,27 @@ const Header = ({ enableTransition }) => {
   const [isLarger768] = useMediaQuery('(min-width: 768px)')
   const { isOpen, onOpen, onClose } = useDisclosure()
   const Logo = styled.span`
-    color: #12141d;
-    font-weight: 600;
-    margin-left: 2px;
-    &:hover {
-      color: #ffb7b7;
-      transition: ease-in-out 0.1s;
-    }
-  `
-  const LogoLight = styled.span`
     color: #f5f9e9;
     font-weight: 600;
     margin-left: 2px;
+    &:hover {
+      color: #f6909d;
+      transition: ease-in-out 0.1s;
+    }
+  `
+  const LogoDrawer = styled.span`
+    color: #f5f9e9;
+    font-weight: 600;
+    margin-left: 2px;
+    &:hover {
+      color: #7cffcb;
+      transition: ease-in-out 0.1s;
+    }
   `
   const Bars = styled.span`
-    color: #12141d;
+    color: #f5f9e9;
     &:hover {
-      color: #ffb7b7;
+      color: #f6909d;
       transition: ease-in-out 0.1s;
     }
   `
@@ -73,7 +77,7 @@ const Header = ({ enableTransition }) => {
     transition: all 0.25s;
     cursor: pointer;
     &:hover {
-      color: #ffb7b7;
+      color: #7cffcb;
     }
   `
 
@@ -86,17 +90,16 @@ const Header = ({ enableTransition }) => {
         onClose={onClose}
       >
         <DrawerOverlay />
-        <DrawerContent backgroundColor="complement">
+        <DrawerContent backgroundColor="secondary">
           <DrawerCloseButton />
           <DrawerHeader h="71" borderBottomWidth="0.5px" mb="10">
             <Text
               cursor="pointer"
-              color="displayColor"
               fontWeight="bold"
               fontSize="32px"
               marginTop="-1"
             >
-              <LogoLight>&#585;&#7787;</LogoLight>
+              <LogoDrawer>&#585;&#7787;</LogoDrawer>
             </Text>
           </DrawerHeader>
 
@@ -159,16 +162,11 @@ const Header = ({ enableTransition }) => {
           width="100%"
           px="3vw"
           py="3"
-          borderBottom="0.5px solid #1e2029"
-          background="background"
+          // borderBottom="2px solid #1e2029"
+          background="transparent"
         >
           <NextLink href="/" passHref>
-            <Text
-              cursor="pointer"
-              color="textPrimary"
-              fontWeight="bold"
-              fontSize="32px"
-            >
+            <Text cursor="pointer" fontWeight="bold" fontSize="2.3em">
               <Logo>&#585;&#7787;</Logo>
             </Text>
           </NextLink>
@@ -178,7 +176,7 @@ const Header = ({ enableTransition }) => {
                 <Button
                   as="a"
                   variant="ghost"
-                  p="4"
+                  p="2"
                   ml="3vw"
                   fontSize="16px"
                   color="textPrimary"
@@ -187,19 +185,19 @@ const Header = ({ enableTransition }) => {
                     transform: 'scale(0.95)',
                   }}
                   _hover={{
-                    color: '#ffb7b7',
+                    color: 'secondary',
                     textDecoration: 'underline',
                     transition: 'ease-in-out 0.1s',
                   }}
                 >
-                  Home
+                  {'Home()'}
                 </Button>
               </NextLink>
               <NextLink href="/projects" passHref>
                 <Button
                   as="a"
                   variant="ghost"
-                  p="4"
+                  p="2"
                   ml="3vw"
                   fontSize="16px"
                   color="textPrimary"
@@ -208,19 +206,19 @@ const Header = ({ enableTransition }) => {
                     transform: 'scale(0.95)',
                   }}
                   _hover={{
-                    color: '#ffb7b7',
+                    color: 'secondary',
                     textDecoration: 'underline',
                     transition: 'ease-in-out 0.1s',
                   }}
                 >
-                  Projects
+                  {'Projects()'}
                 </Button>
               </NextLink>
               <NextLink href="/blog" passHref>
                 <Button
                   as="a"
                   variant="ghost"
-                  p="4"
+                  p="2"
                   ml="3vw"
                   fontSize="16px"
                   color="textPrimary"
@@ -229,12 +227,33 @@ const Header = ({ enableTransition }) => {
                     transform: 'scale(0.95)',
                   }}
                   _hover={{
-                    color: '#ffb7b7',
+                    color: 'secondary',
                     textDecoration: 'underline',
                     transition: 'ease-in-out 0.1s',
                   }}
                 >
-                  Blog
+                  {'Blog()'}
+                </Button>
+              </NextLink>
+              <NextLink href="/contact" passHref>
+                <Button
+                  p="3"
+                  h="37px"
+                  ml="3vw"
+                  fontSize="16px"
+                  // color="textPrimary"
+                  // backgroundColor="button1"
+                  textDecorationColor="transparent"
+                  bgGradient="linear(to-r,#f6909d,#feb9a3)"
+                  _active={{
+                    transform: 'scale(0.95)',
+                  }}
+                  _hover={{
+                    color: 'button3',
+                    backgroundColor: 'textPrimary',
+                  }}
+                >
+                  {'Contact Me'}
                 </Button>
               </NextLink>
             </Box>
@@ -249,5 +268,6 @@ const Header = ({ enableTransition }) => {
     </Box>
   )
 }
+
 
 export default Header
