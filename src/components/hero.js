@@ -1,5 +1,6 @@
 import {
   SlideFade,
+  ScaleFade,
   useMediaQuery,
   Stack,
   Image,
@@ -11,10 +12,10 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import { Wave } from '../assets/wave.png'
 
 const Hero = () => {
   const [isLarger800] = useMediaQuery('(min-width: 800px)')
+  const [isLarger600] = useMediaQuery('(min-width: 600px)')
 
   return (
     <>
@@ -26,12 +27,12 @@ const Hero = () => {
         >
           <Box position="relative">
             <Image
-              // src="https://svgsilh.com/svg/1254501-f5f9e9.svg"
-              filter="invert(0.3)"
+              src=""
+              filter="invert(0)"
               w={{ base: '5em', md: '10em', lg: '14em' }}
               position="absolute"
-              top={{ base: '0', md: '-15' }}
-              left={{ base: '-2', md: '-10' }}
+              bottom={{ base: '0', md: '-15' }}
+              right={{ base: '-2', md: '-10' }}
               display="flex"
               zIndex={0}
               alt=""
@@ -73,9 +74,33 @@ const Hero = () => {
             <Box color="secondary" as="span">
               Software Engineer.
             </Box>{' '}
-            A Passionate Developer and Co-Founder of Cedar & Gold Creative.
+            A Passionate Full Stack Developer{' '}
+            {isLarger800
+              ? 'and Co-Founder of\nCedar & Gold Creative.'
+              : 'and Co-Founder of Cedar & Gold Creative.'}
           </Heading>
         </SlideFade>
+
+        <SlideFade
+          direction="top"
+          in={true}
+          transition={{ enter: { duration: 0.4, delay: 0.9 } }}
+        >
+          <Text color="textSecondary">
+            <Box
+              color="complement"
+              as="span"
+            >
+              11th Doctor -{` `}
+            </Box>
+            <Box display="inline">
+              “I am and always will be the optimist. The hoper of far-flung
+              hopes, <br />
+              and the dreamer of improbable dreams.”{' '}
+            </Box>
+          </Text>
+        </SlideFade>
+
         <SlideFade
           direction="top"
           in={true}
@@ -84,11 +109,10 @@ const Hero = () => {
           <Stack isInline spacing={4}>
             <Link href="https://github.com/jamesindeed" isExternal>
               <Button
-                leftIcon={<FaGithub color="#7cffcb" />}
+                leftIcon={<FaGithub color="#fff772" />}
                 transition="0.3s"
-                position="static"
                 size={isLarger800 ? 'md' : 'sm'}
-                fontSize={isLarger800 ? '0.8em' : '0.6em'}
+                fontSize={isLarger800 ? 'xl' : '3xl'}
                 color="textSecondary"
               >
                 Github
@@ -99,11 +123,10 @@ const Hero = () => {
               isExternal
             >
               <Button
-                leftIcon={<FaLinkedin color="#7cffcb" />}
+                leftIcon={<FaLinkedin color="#66c9ff" />}
                 transition="0.3s"
-                position="static"
                 size={isLarger800 ? 'md' : 'sm'}
-                fontSize={isLarger800 ? '0.8em' : '0.6em'}
+                fontSize={isLarger800 ? 'xl' : '3xl'}
                 color="textSecondary"
               >
                 LinkedIn
@@ -111,14 +134,13 @@ const Hero = () => {
             </Link>
             <Link href="mailto:jamesstroughton@gmail.com" isExternal>
               <Button
-                leftIcon={<FaEnvelope color="#7cffcb" />}
+                leftIcon={<FaEnvelope color="	#f6909d" />}
                 transition="0.3s"
-                position="static"
                 size={isLarger800 ? 'md' : 'sm'}
-                fontSize={isLarger800 ? '0.8em' : '0.6em'}
+                fontSize={isLarger800 ? 'xl' : '3xl'}
                 color="textSecondary"
               >
-                Contact Me
+                Email
               </Button>
             </Link>
           </Stack>
