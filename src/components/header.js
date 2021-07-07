@@ -17,6 +17,7 @@ import {
   DrawerBody,
   Stack,
   HStack,
+  ScaleFade,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { HiMenuAlt3 } from 'react-icons/hi'
@@ -47,7 +48,7 @@ const Header = ({ enableTransition }) => {
   const [isLarger768] = useMediaQuery('(min-width: 768px)')
   const { isOpen, onOpen, onClose } = useDisclosure()
   const Logo = styled.span`
-    color: #f5f9e9;
+    color: #fdfcfa;
     font-weight: 600;
     margin-left: 2px;
     &:hover {
@@ -56,28 +57,28 @@ const Header = ({ enableTransition }) => {
     }
   `
   const LogoDrawer = styled.span`
-    color: #f5f9e9;
+    color: #0e1212;
     font-weight: 600;
     margin-left: 2px;
     &:hover {
-      color: #7cffcb;
+      color: #f6909d;
       transition: ease-in-out 0.1s;
     }
   `
   const Bars = styled.span`
-    color: #f5f9e9;
+    color: #fdfcfa;
     &:hover {
       color: #f6909d;
       transition: ease-in-out 0.1s;
     }
   `
   const SocialIcons = styled.a`
-    color: #f5f9e9;
+    color: #0e1212;
     font-size: 14;
     transition: all 0.25s;
     cursor: pointer;
     &:hover {
-      color: #7cffcb;
+      color: #f6909d;
     }
   `
 
@@ -90,9 +91,14 @@ const Header = ({ enableTransition }) => {
         onClose={onClose}
       >
         <DrawerOverlay />
-        <DrawerContent backgroundColor="secondary">
-          <DrawerCloseButton />
-          <DrawerHeader h="71" borderBottomWidth="0.5px" mb="10">
+        <DrawerContent backgroundColor="textPrimary">
+          <DrawerCloseButton color="background" />
+          <DrawerHeader
+            h="71"
+            borderColor="textSecondary"
+            borderBottomWidth="1px"
+            mb="10"
+          >
             <Text
               cursor="pointer"
               fontWeight="bold"
@@ -106,17 +112,41 @@ const Header = ({ enableTransition }) => {
           <DrawerBody>
             <Stack spacing="24px">
               <NextLink href="/" passHref>
-                <Button as="a" variant="ghost" fontSize="16px">
+                <Button
+                  color="background"
+                  as="a"
+                  variant="ghost"
+                  fontSize="16px"
+                  _hover={{
+                    color: '#f6909d',
+                  }}
+                >
                   Home
                 </Button>
               </NextLink>
               <NextLink href="/projects" passHref>
-                <Button as="a" variant="ghost" fontSize="16px">
+                <Button
+                  color="background"
+                  as="a"
+                  variant="ghost"
+                  fontSize="16px"
+                  _hover={{
+                    color: '#f6909d',
+                  }}
+                >
                   Projects
                 </Button>
               </NextLink>
               <NextLink href="/blog" passHref>
-                <Button as="a" variant="ghost" fontSize="16px">
+                <Button
+                  color="background"
+                  as="a"
+                  variant="ghost"
+                  fontSize="16px"
+                  _hover={{
+                    color: '#f6909d',
+                  }}
+                >
                   Blog
                 </Button>
               </NextLink>
@@ -143,7 +173,7 @@ const Header = ({ enableTransition }) => {
   )
 
   return (
-    <Box zIndex="99">
+    <Box zIndex="99" h="0px">
       <Slide
         transition={
           enableTransition
@@ -162,8 +192,8 @@ const Header = ({ enableTransition }) => {
           width="100%"
           px="3vw"
           py="3"
-          // borderBottom="2px solid #1e2029"
-          background="transparent"
+          // borderBottom="0.5px solid #8F9094"
+          background="#0E1212"
         >
           <NextLink href="/" passHref>
             <Text cursor="pointer" fontWeight="bold" fontSize="2.3em">
@@ -190,7 +220,7 @@ const Header = ({ enableTransition }) => {
                     transition: 'ease-in-out 0.1s',
                   }}
                 >
-                  {'Home()'}
+                  {'Home'}
                 </Button>
               </NextLink>
               <NextLink href="/projects" passHref>
@@ -211,7 +241,7 @@ const Header = ({ enableTransition }) => {
                     transition: 'ease-in-out 0.1s',
                   }}
                 >
-                  {'Projects()'}
+                  {'Projects'}
                 </Button>
               </NextLink>
               <NextLink href="/blog" passHref>
@@ -232,19 +262,18 @@ const Header = ({ enableTransition }) => {
                     transition: 'ease-in-out 0.1s',
                   }}
                 >
-                  {'Blog()'}
+                  {'Blog'}
                 </Button>
               </NextLink>
               <NextLink href="/contact" passHref>
                 <Button
-                  p="3"
-                  h="37px"
+                  p="4"
                   ml="3vw"
-                  fontSize="16px"
-                  // color="textPrimary"
-                  // backgroundColor="button1"
+                  fontSize="15px"
+                  color="textPrimary"
                   textDecorationColor="transparent"
-                  bgGradient="linear(to-r,#f6909d,#feb9a3)"
+                  bgGradient="linear(to-r,#f6909d 20%,#ffc988)"
+                  // backgroundColor="#f6909d"
                   _active={{
                     transform: 'scale(0.95)',
                   }}
