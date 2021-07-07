@@ -17,26 +17,33 @@ const GlobalStyle = ({ children }) => {
             background: #ffb7b7;
             color: #fefefe;
           }
-          html {
+          html,
+          body {
             min-width: 356px;
-            background-image: 
+            background-color: #0e1212;
+            font-size: 100%;
           }
           #__next {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: #0e1212;
-            color: #fdfcfa,
-;
+            color: #fdfcfa;
+            margin: 0 auto;
+          }
+          img {
+            user-select: none;
+            height: auto;
+            max-width: 100%;
+
           }
           ::-webkit-scrollbar {
-            width: 8px;
-            background: #080808;
+            width: 3px;
+            background: #0e1212;
           }
 
           ::-webkit-scrollbar-thumb {
-            background: #111111;
-            border-radius: 8px;
+            background: #69464a;
+            border-radius: 3px;
           }
           .js-focus-visible :focus:not([data-focus-visible-added]) {
             outline: none;
