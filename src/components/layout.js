@@ -9,7 +9,7 @@ const Layout = ({ enableTransition, children }) => {
       <Flex as="main" justifyContent="center" flexDirection="column">
         {children}
       </Flex>
-      <Stack alignItems="center" mt={10} mb={5}>
+      <Stack alignItems="center" mt={20} mb={5}>
         <Text textAlign="center" fontSize="lg">
           Designed and Developed by James Troughton.
           <br />
