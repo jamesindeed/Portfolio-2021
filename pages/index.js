@@ -4,6 +4,7 @@ import SEO from '../src/components/seo'
 import Layout from '../src/components/layout'
 import { Stack } from '@chakra-ui/react'
 import Hero from '../src/components/hero'
+import About from '../src/components/about'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         mt={{ base: '15vh', md: '22.5vh' }}
       >
         <Hero />
+        <About />
         <SEO />
       </Stack>
     </Layout>
