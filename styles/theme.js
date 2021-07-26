@@ -15,7 +15,7 @@ const fluidType = (minFont, maxFont) => {
 }
 
 const colors = {
-  background: '#0E1212',
+  background: '#0E1212', 
   secondary: '#f6909d',
   complement: '#66c9ff',
   complementSecondary: '#E5CB60',
@@ -40,7 +40,7 @@ const breakpoints = createBreakpoints({
   sm: '30em',
   md: '48em',
   lg: '80em',
-  xl: '80em',
+  xl: '120em',
 })
 
 const Link = {
@@ -79,7 +79,10 @@ const overrides = {
     '8xl': fluidType(36, 72),
     display: fluidType(80, 144),
     display2: fluidType(24, 36),
-    display3: fluidType(16, 24),
+    display3: fluidType(16, 22),
+    button: fluidType(14, 16),
+    footer: fluidType(14, 18),
+    tag: fluidType(10, 14),
   },
 }
 
