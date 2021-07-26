@@ -196,7 +196,11 @@ const Header = ({ enableTransition }) => {
           background="#0E1212"
         >
           <NextLink href="/" passHref>
-            <Text cursor="pointer" fontWeight="bold" fontSize="2.3em">
+            <Text
+              cursor="pointer"
+              fontWeight="bold"
+              fontSize={{ base: '2.3em', lg: '2.8em', xl: '3.2em' }}
+            >
               <Logo>&#585;&#7787;</Logo>
             </Text>
           </NextLink>
@@ -208,7 +212,7 @@ const Header = ({ enableTransition }) => {
                   variant="ghost"
                   p="2"
                   ml="3vw"
-                  fontSize="16px"
+                  fontSize={{ base: '15px', lg: '20px' }}
                   color="textPrimary"
                   textDecorationColor="transparent"
                   _active={{
@@ -229,7 +233,7 @@ const Header = ({ enableTransition }) => {
                   variant="ghost"
                   p="2"
                   ml="3vw"
-                  fontSize="16px"
+                  fontSize={{ base: '15px', lg: '20px' }}
                   color="textPrimary"
                   textDecorationColor="transparent"
                   _active={{
@@ -250,7 +254,7 @@ const Header = ({ enableTransition }) => {
                   variant="ghost"
                   p="2"
                   ml="3vw"
-                  fontSize="16px"
+                  fontSize={{ base: '15px', lg: '20px' }}
                   color="textPrimary"
                   textDecorationColor="transparent"
                   _active={{
@@ -269,11 +273,12 @@ const Header = ({ enableTransition }) => {
                 <Button
                   p="4"
                   ml="3vw"
-                  fontSize="15px"
+                  fontSize={{ base: '15px', lg: '19px' }}
+                  size="0"
                   color="textPrimary"
                   textDecorationColor="transparent"
-                  bgGradient="linear(to-r,#f6909d 20%,#ffc988)"
-                  // backgroundColor="#f6909d"
+                  // bgGradient="linear(to-r,#f6909d 20%,#ffc988)"
+                  backgroundColor="#f6909d"
                   _active={{
                     transform: 'scale(0.95)',
                   }}

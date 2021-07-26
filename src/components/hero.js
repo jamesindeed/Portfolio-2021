@@ -1,7 +1,6 @@
 import {
   SlideFade,
   ScaleFade,
-  useMediaQuery,
   Stack,
   Image,
   Box,
@@ -12,10 +11,10 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import useMediaQuery from '../hooks/useMediaQuery'
 
 const Hero = () => {
-  const [isLarger800] = useMediaQuery('(min-width: 800px)')
-  const [isLarger600] = useMediaQuery('(min-width: 600px)')
+  const isLarger800 = useMediaQuery(800)
 
   return (
     <>
@@ -86,12 +85,9 @@ const Hero = () => {
           in={true}
           transition={{ enter: { duration: 0.4, delay: 0.9 } }}
         >
-          <Text color="textSecondary">
-            <Box
-              color="complement"
-              as="span"
-            >
-              11th Doctor -{` `}
+          <Text color="textSecondary" fontSize="display3">
+            <Box color="complement" as="span">
+              11th Doctor {` `}
             </Box>
             <Box display="inline">
               “I am and always will be the optimist. The hoper of far-flung
@@ -112,7 +108,7 @@ const Hero = () => {
                 leftIcon={<FaGithub color="#fff772" />}
                 transition="0.3s"
                 size={isLarger800 ? 'md' : 'sm'}
-                fontSize={isLarger800 ? 'xl' : '3xl'}
+                fontSize="button"
                 color="textSecondary"
               >
                 Github
@@ -126,7 +122,7 @@ const Hero = () => {
                 leftIcon={<FaLinkedin color="#66c9ff" />}
                 transition="0.3s"
                 size={isLarger800 ? 'md' : 'sm'}
-                fontSize={isLarger800 ? 'xl' : '3xl'}
+                fontSize="button"
                 color="textSecondary"
               >
                 LinkedIn
@@ -137,7 +133,7 @@ const Hero = () => {
                 leftIcon={<FaEnvelope color="	#f6909d" />}
                 transition="0.3s"
                 size={isLarger800 ? 'md' : 'sm'}
-                fontSize={isLarger800 ? 'xl' : '3xl'}
+                fontSize="button"
                 color="textSecondary"
               >
                 Email
