@@ -3,7 +3,7 @@ import { Stack, Heading, Text, SimpleGrid, Divider } from '@chakra-ui/react'
 import Layout from '../../src/components/layout'
 import Card from '../../src/components/card'
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
-import { FaSearch } from 'react-icons/fa'
+import { FaSearch as Icon } from 'react-icons/fa'
 
 export default function Projects({ projects }) {
   const [query, setQuery] = useState('')
@@ -33,7 +33,7 @@ export default function Projects({ projects }) {
               <InputRightElement
                 fontSize={{ base: '14px', md: '16px' }}
                 pointerEvents="none"
-                children={<FaSearch />}
+                children={<Icon />}
               />
               <Input
                 fontSize={{ base: '14px', md: '16px' }}
