@@ -139,9 +139,12 @@ export default function Cards({
                   colorScheme={getTag(item)[0]}
                   size={isLarger800 ? 'md' : 'sm'}
                   alignItems="center"
-                  p={{md: '6px', lg: '8px', xl: '10px'}}
+                  p={{ md: '6px', lg: '8px', xl: '10px' }}
                 >
-                  <TagLeftIcon fontSize={{ base: '10px', lg: '15px'}} as={getTag(item)[1]}></TagLeftIcon>
+                  <TagLeftIcon
+                    fontSize={{ base: '10px', lg: '15px' }}
+                    as={getTag(item)[1]}
+                  ></TagLeftIcon>
                   <TagLabel fontSize="tag">{item}</TagLabel>
                 </Tag>
               ))
