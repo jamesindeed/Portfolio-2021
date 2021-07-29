@@ -3,6 +3,7 @@ import { Box, Flex, Text, chakra } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import { FaFacebookF, FaInstagram, FaGithub, FaDribbble } from 'react-icons/fa'
+import SlideUpWhenVisible from '../hooks/slideUpWhenVisible'
 
 const social = [
   {
@@ -67,68 +68,70 @@ const Footer = () => {
         flexDirection="column"
         mt={{ base: '2em', md: '2.5em', lg: '5em' }}
       >
-        <NextLink href="/" passHref>
-          <Text
-            cursor="pointer"
-            fontWeight="bold"
-            fontSize={{ base: '2.3em', lg: '2.8em' }}
+        <SlideUpWhenVisible threshold={0.2}>
+          <NextLink href="/" passHref>
+            <Text
+              cursor="pointer"
+              fontWeight="bold"
+              fontSize={{ base: '2.3em', lg: '2.8em' }}
+            >
+              <Logo>&#585;&#7787;</Logo>
+            </Text>
+          </NextLink>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            // flexWrap="wrap"
+            mt={{ base: '1em', md: '2em' }}
+            mb={{ base: '1em', md: '2em' }}
+            fontSize="footer"
           >
-            <Logo>&#585;&#7787;</Logo>
-          </Text>
-        </NextLink>
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          // flexWrap="wrap"
-          mt={{ base: '1em', md: '2em' }}
-          mb={{ base: '1em', md: '2em' }}
-          fontSize="footer"
-        >
-          <Link>
-            <NextLink href="/">Home</NextLink>
-          </Link>
-          <Link>
-            <NextLink href="/blog">Blog</NextLink>
-          </Link>
-          <Link>
-            <NextLink href="/projects">Projects</NextLink>
-          </Link>
-          <Link>
-            <NextLink href="/contact">Contact</NextLink>
-          </Link>
-        </Flex>
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          fontSize="button"
-          mb={{ base: '1em', md: '2em' }}
-        >
-          {social.map((socialItem, i) => (
-            <SocialIcons key={i} href={socialItem.path}>
-              {socialItem.icon}
-            </SocialIcons>
-          ))}
-        </Flex>
+            <Link>
+              <NextLink href="/">Home</NextLink>
+            </Link>
+            <Link>
+              <NextLink href="/blog">Blog</NextLink>
+            </Link>
+            <Link>
+              <NextLink href="/projects">Projects</NextLink>
+            </Link>
+            <Link>
+              <NextLink href="/contact">Contact</NextLink>
+            </Link>
+          </Flex>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            fontSize="button"
+            mb={{ base: '1em', md: '2em' }}
+          >
+            {social.map((socialItem, i) => (
+              <SocialIcons key={i} href={socialItem.path}>
+                {socialItem.icon}
+              </SocialIcons>
+            ))}
+          </Flex>
 
-        <Text fontSize={{ base: '10', lg: '14' }}>
-          Copyright by {new Date().getFullYear()}
-          <chakra.span fontWeight="semibold" color="button1">
-            {' '}
-            James Troughton
-          </chakra.span>
-        </Text>
-        <Text fontSize={{ base: '10', lg: '14' }}>
-          <div>
-            Icons made by{' '}
-            <a href="https://www.freepik.com" title="Freepik">
-              Freepik
-            </a>{' '}
-            from{' '}
-            <a href="https://www.flaticon.com/" title="Flaticon">
-              www.flaticon.com
-            </a>
-          </div>
-        </Text>
+          <Text fontSize={{ base: '10', lg: '14' }}>
+            Copyright by {new Date().getFullYear()}
+            <chakra.span fontWeight="semibold" color="button1">
+              {' '}
+              James Troughton
+            </chakra.span>
+          </Text>
+          <Text fontSize={{ base: '10', lg: '14' }}>
+            <div>
+              Icons made by{' '}
+              <a href="https://www.freepik.com" title="Freepik">
+                Freepik
+              </a>{' '}
+              from{' '}
+              <a href="https://www.flaticon.com/" title="Flaticon">
+                www.flaticon.com
+              </a>
+            </div>
+          </Text>
+        </SlideUpWhenVisible>
       </Box>
     </>
   )

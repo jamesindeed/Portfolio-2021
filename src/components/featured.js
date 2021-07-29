@@ -12,33 +12,33 @@ import Card from './card.js'
 export default function FeaturedProjects({ projects }) {
   return (
     <>
-        <SlideUpWhenVisible threshold={0.1}>
-          <Stack spacing={8} w="full">
-            <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={16}>
-              <Stack spacing={1}>
-                <Stack
-                  isInline
-                  alignItems="center"
-                  justifyContent="space-between"
-                >
-                  <Heading fontSize="display2" color="textPrimary">
-                    All Case Studies.
-                  </Heading>
-                </Stack>
-                <NextLink href="/projects">
-                  <Text
-                    color="secondary"
-                    display={{ base: 'none', md: 'block' }}
-                    fontSize="display3"
-                    transition="0.2s ease-in-out"
-                    _hover={{ color: 'complement' }}
-                  >
-                    See more &rarr;
-                  </Text>
-                </NextLink>
+      <SlideUpWhenVisible threshold={0.1}>
+        <Stack spacing={8} w="full">
+          <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={16}>
+            <Stack spacing={1}>
+              <Stack
+                isInline
+                alignItems="center"
+                justifyContent="space-between"
+              >
+                <Heading fontSize="display2" color="textPrimary">
+                  All Case Studies.
+                </Heading>
               </Stack>
+              <NextLink href="/projects">
+                <Text
+                  color="secondary"
+                  display={{ base: 'none', md: 'block' }}
+                  fontSize="display3"
+                  transition="0.2s ease-in-out"
+                  _hover={{ color: 'complement' }}
+                >
+                  See more &rarr;
+                </Text>
+              </NextLink>
+            </Stack>
 
-              <Card
+            <Card
                 imageURL={projects[0].fields.imageUrl}
                 title={projects[0].fields.title}
                 desc={projects[0].fields.description}
@@ -66,9 +66,10 @@ export default function FeaturedProjects({ projects }) {
                 deployLink={projects[2].fields.deployLink}
                 tag={projects[2].fields.tags}
               />
-            </SimpleGrid>
-          </Stack>
-        </SlideUpWhenVisible>
+
+          </SimpleGrid>
+        </Stack>
+      </SlideUpWhenVisible>
     </>
   )
 }

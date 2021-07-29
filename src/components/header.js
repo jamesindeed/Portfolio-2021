@@ -271,7 +271,7 @@ const Header = ({ enableTransition }) => {
               </NextLink>
               <NextLink href="/contact" passHref>
                 <Button
-                  p="4"
+                  p="3"
                   ml="3vw"
                   fontSize={{ base: '15px', lg: '19px' }}
                   size="0"
