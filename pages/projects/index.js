@@ -22,7 +22,7 @@ export default function Projects({ projects }) {
         >
           <Stack spacing={5}>
             {' '}
-            <Heading color="textPrimary" fontSize={{ base: '4xl', md: '6xl' }}>
+            <Heading color="textPrimary" fontSize="display2">
               Projects
             </Heading>
             <Text fontSize={{ base: '14px', md: '16px' }}>
