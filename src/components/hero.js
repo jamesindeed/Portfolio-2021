@@ -43,7 +43,7 @@ const Hero = () => {
               position="relative"
               zIndex={1}
             >
-              Hello! I'm-
+              Hello! I&apos;m-
             </Text>
           </Box>
           <Heading
